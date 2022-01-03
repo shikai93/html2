@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        .myrow {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        }
+        div {
+            width: 100px;
+            height: 100px;
+        }
+        .red {
+            background-color: red;
+        }
+        #blue {
+            background-color: blue;
+        }
+        .red-override {
+            background-color: red !important;
+        }
+        #blue-override {
+            background-color: blue !important;
+        }
+        .myclass .red {
+            background-color: hotpink;
+        }
+        .myrow :first-child {
+            border: black solid;
+        }
+    </style>
+</head>
+<body>
+    <!-- class id inline heirachy -->
+    <div class="myrow">
+        <div class="red"></div>
+        <div class="red" id="blue"></div>
+        <div class="red" id="blue" style="background-color: green;"></div>
+    </div>
+    <br>
+    <!-- class id inline heirachy with !important -->
+    <div class="myrow">
+        <div class="red-override" id="blue" style="background-color: green;"></div>
+        <div class="red-override" id="blue-override" style="background-color: green;"></div>
+        <div class="red-override" id="blue-override" style="background-color: green !important;"></div>
+    </div>
+    <br>
+    <!-- specificity hierachy (.red with .myclass parent vs just .red) pink overrides red in this case -->
+    <div class="myrow">
+        <div class="red"></div>
+        <div  class="myclass">
+            <div class="red"></div>
+        </div>
+        <div id="blue"></div>
+    </div>
+</body>

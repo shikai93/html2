@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        .myrow {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        }
+        .bigdiv {
+            background-color: red;
+            height: 300px;
+            width: 100px;
+        }
+        .vertical-align {
+            align-self: center;
+        }
+        .col .vertical-align {
+            display: flex;
+            height: 100%;
+            align-items: center;
+        }
+        .col-align {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <!-- case 1 -->
+    <div class="myrow">
+        <div class="bigdiv">
+        </div>
+        <div class="vertical-align">
+            Hello World
+        </div>
+    </div>
+    <br>
+    <!-- case 2 -->
+    <div class="myrow">
+        <div class="bigdiv">
+        </div>
+        <div class="col">
+            <div class="vertical-align">
+                Hello World
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-- case 2 method 2-->
+    <div class="myrow">
+        <div class="bigdiv">
+        </div>
+        <div class="col-align">
+            <div>
+                Hello World
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-- case 3 -->
+    <div class="myrow" style="
+    /* justify-content: center; */
+    align-items: center;
+    ">
+        <div class="bigdiv">
+        </div>
+        <div>
+            Hello World
+        </div>
+    </div>
+    <br>
+</body>

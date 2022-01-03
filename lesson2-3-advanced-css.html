@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        .myrow {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        }
+        .star {
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMM_ouJpFH5oMsuzjoAyffmtXxPLbcNrL_uw&usqp=CAU);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+        }
+        @keyframes blink {
+            0% {background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMM_ouJpFH5oMsuzjoAyffmtXxPLbcNrL_uw&usqp=CAU);}
+            50% {background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlbknLAESnOINVAGOyL_utzdTgT6UK7ehEqg&usqp=CAU);}
+        }
+        .myrow :nth-child(2) {
+            animation-name: blink;
+            animation-duration: 1s;
+            animation-timing-function: step-start;
+            animation-iteration-count: infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="myrow">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+    </div>
+    <br>
+</body>
