@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .myrow {
+            display : flex; 
+            justify-content: space-evenly;
+        }
+        .show-phone {
+            background-color: red;
+        }
+        .show-ipad {
+            background-color: blue;
+        }
+        .show-desktop {
+            background-color: green;
+        }
+        /* desktop */
+        @media screen and (min-width: 1200px) {
+            .show-desktop {
+                display: block !important;
+            }
+            .show-ipad {
+                display: none;
+            }
+            .show-phone {
+                display: none;
+            }
+        }
+        /* ipad */
+        @media screen and (max-width: 1199px) {
+            .show-desktop {
+                display: none;
+            }
+            .show-ipad {
+                display: block !important;
+            }
+            .show-phone {
+                display: none;
+            }
+        }
+        /* phone */
+        @media screen and (max-width: 767px) {
+            .show-desktop {
+                display: none;
+            }
+            .show-ipad {
+                display: none;
+            }
+            .show-phone {
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="myrow">
+        <div class="show-phone">
+            Showing this on phone
+        </div>
+        <div class="show-ipad">
+            Showing this on ipad
+        </div>
+        <div class="show-desktop">
+            Showing this on desktop
+        </div>
+    </div>
+    <br>
+    <div class="myrow">
+        <div class="show-phone show-ipad">
+            Showing this on phone and ipad
+        </div>
+        <div class="show-ipad show-desktop">
+            Showing this on ipad and desktop
+        </div>
+    </div>
+</body>
+</html>

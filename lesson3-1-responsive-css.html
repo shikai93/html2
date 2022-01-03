@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        html {
+            font-size: 30px;
+        }
+        .parent {
+            font-size: 10px;
+        }
+        .static {
+            font-size: 30px;
+        }
+        .em {
+            font-size: 1em;
+        }
+        .rem {
+            font-size: 1rem;
+        }
+
+        /* css defined later would override the current css set 
+        thus we start with the loosest definition first, then override them if the screen size fits the criteria */
+        /* desktop */
+        @media screen and (max-width: 1400px) {
+            html {
+                font-size: 30px;
+            }
+        }
+        /* ipad */
+        @media screen and (max-width: 1199px) {
+            html {
+                font-size: 20px;
+            }
+        }
+        /* phone */
+        @media screen and (max-width: 767px) {
+            html {
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div style="display : flex; justify-content: space-evenly;">
+        <div class="static">
+            PX
+        </div>
+        <div class="parent">
+            <div class="em">
+                EM
+            </div>
+        </div>
+        <div class="rem">
+            REM
+        </div>
+    </div>
+    <br>
+    <div style="display : flex; justify-content: space-evenly;">
+        <div style="font-size: 30px;">30px</div>
+        <div style="font-size: 20px;">20px</div>
+        <div style="font-size: 10px;">10px</div>
+    </div>
+</body>
+</html>
